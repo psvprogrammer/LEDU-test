@@ -1,0 +1,100 @@
+body{
+	font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif !important;
+	margin-top: 0px !important;
+	padding-left: 0px !important;
+	padding-right: 0px !important;
+}
+
+.btn-rectangle{
+	border-radius: 0 !important;
+}
+
+.btn-group-menu{
+	margin-top: 10px;
+	margin-bottom: 5px;
+}
+.logo-style{
+	margin-top: -10px;
+	/*float: right;*/
+}
+.logo-style img{
+	height: 40px;
+}
+.no-padding{
+	padding: 0px;
+}
+.one-line{
+	overflow: hidden;
+    white-space: nowrap;
+}
+
+.btn-link-categories{
+	position: absolute;
+    width: 40px !important;
+    height: 40px;
+    top: 5px;
+    border-radius: 50%;
+    border-color: white;
+    border-style: dotted;
+    padding-top: 9px;
+    padding-left: 6px;
+}
+.btn-link-categories-left{
+	right: 10px;
+}
+.btn-link-categories-right{
+	left: 10px;
+}
+.btn-link-categories span{
+	font-size: 25px;
+    top: -4px;
+}
+.table-btn{
+	height: 35px;
+	padding: 0px 20px 0px 20px;
+	margin: 2px 5px;
+}
+.table-p{
+	font-weight: bold;
+    /*font-size: large;*/
+}
+.popover-error{
+	background-color: lightcoral;
+    color: white;
+    font-weight: bold;
+}
+.popover-success{
+	background-color: lightgreen;
+    color: white;
+    font-weight: bold;
+}
+.popover-left{
+	left: 20% !important;
+}
+.budget-seletor{
+	margin-left: 30px;
+	font-size: small;
+	float: left;
+	margin-top: 5px;
+	margin-right: -10px;
+}
+
+.vote-star{
+	width: 24px;
+}
+.vote-star:hover{
+	color: orange;
+	cursor: pointer;
+}
+
+.vote-num{
+	padding-left: 3px;
+}
+
+.checked{
+    color: orange;
+}
+
+.pointer{
+    cursor: pointer;
+}

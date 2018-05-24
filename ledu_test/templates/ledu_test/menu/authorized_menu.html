@@ -1,0 +1,36 @@
+{% load staticfiles %}
+<div class="container-fluid">
+  <div class="col-xs-12">
+    <nav class="navbar navbar-default">
+        <div class="row">
+            <div class="col-xs-3" style="text-align: left; margin-top: 10px;">
+                <a href="/" class="btn btn-inverse logo-style">
+                    <img src="{% static 'ledu_test/logo.png' %}">
+                </a>
+            </div>
+            <div class="col-xs-7" style="text-align: center;">
+                <div class="btn-group-justified" role="group">
+                    <a href="{% url 'project-list' %}" class="btn btn-success btn-rectangle">
+                        <span class="glyphicon glyphicon-th-large" style="font-size: 25px; color: greenyellow;"
+                              data-toggle="tooltip" data-placement="bottom" title="all projects"></span>
+                        <br/>all projects
+                    </a>
+                    <a href="{% url 'project-add' %}" class="btn btn-primary btn-rectangle">
+                        <span class="glyphicon glyphicon-plus" style="font-size: 25px; color: greenyellow;"
+                              data-toggle="tooltip" data-placement="bottom" title="new project"></span>
+                        <br/>add blog
+                    </a>
+                </div>
+            </div>
+            <div class="col-xs-2" style="text-align: right;">
+                <div class="btn-group">
+{#                    <a href="/profile" class="btn btn-primary btn-rectangle">#}
+{#                        <span class="glyphicon glyphicon-user" style="font-size: 25px;"></span></a>#}
+                    <a href="{% url 'logout' %}" class="btn btn-default btn-rectangle" style="height: 74px;">
+                        <span class="glyphicon glyphicon-log-out" style="font-size: 25px;"></span></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+  </div>
+</div>

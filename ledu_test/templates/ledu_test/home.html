@@ -1,0 +1,19 @@
+{% extends "ledu_test/master.html" %}
+{% load staticfiles %}
+
+{% block content %}
+<div class="container">
+    <div class="jumbotron">
+      <div class="container" style="text-align: center;">
+          {% if user.is_authenticated %}
+          <h1> Welcome, dear {{ user.username }}</h1>
+          {% else %}
+          <h1>Welcome</h1>
+          {% endif %}
+          <h1>to ledu test site!</h1>
+{#        <p>To continue you should login or register your free anonymous account.</p>#}
+{#        <p><a class="btn btn-primary btn-lg" href="{% url 'login' %}" role="button">Login</a> or <a class="btn btn-primary btn-lg" href="/register" role="button">Register</a></p>#}
+      </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "ledu_test/master.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="jumbotron">
+      <div class="container" style="text-align: center;">
+          <h1>Success!</h1>
+          <h4>You've been send an email with activation link</h4>
+          <h4>Please, proceed with that email to complete your registration</h4>
+          <br/>
+          <h6>test link: <a href="{{ request.session.link }}">{{ request.session.link }}</a></h6>
+      </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,26 @@
+<div id="vote-form_{{ project.id }}" class="vote-table" data-load="ajax">
+    <table>
+        <thead>
+            <tr>
+                {% for range in vote_range %}
+                    {% if project.user_rate %}
+                        {% if project.user_rate >= range %}
+                        <th><span class="glyphicon glyphicon-star vote-star checked" rate="{{ range }}"></span></th>
+                        {% else %}
+                        <th><span class="glyphicon glyphicon-star vote-star" rate="{{ range }}"></span></th>
+                        {% endif %}
+                    {% else %}
+                    <th><span class="glyphicon glyphicon-star vote-star" rate="{{ range }}"></span></th>
+                    {% endif %}
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                {% for range in vote_range %}
+                <td><span class="vote-num">{{ range }}</span></td>
+                {% endfor %}
+            </tr>
+        </tbody>
+    </table>
+</div>

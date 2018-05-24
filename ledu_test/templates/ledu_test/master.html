@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+      <title>ledu test</title>
+      {% load staticfiles %}
+      <!-- Bootstrap -->
+      <link rel="stylesheet" type="text/css" href="{% static 'ledu_test/flaty/bootstrap.min.css' %}">
+      <!-- Custom -->
+      <link rel="stylesheet" type="text/css" href="{% static 'ledu_test/css/load_animation.css' %}">
+      <link rel="stylesheet" type="text/css" href="{% static 'ledu_test/css/custom.css' %}">
+      <link rel="stylesheet" type="text/css" href="{% static 'ledu_test/css/glyphicon_animate_rotate_flip.css' %}">
+      <link rel="stylesheet" type="text/css" href="{% static 'ledu_test/css/bootstrap_circle_button.css' %}">
+      <link rel="stylesheet" type="text/css" href="{% static 'ledu_test/vertical_tab_menu/vertical_tab_menu.css' %}">
+
+      <!-- font-awesome -->
+      <link rel="stylesheet" type="text/css" href="{% static 'ledu_test/font-awesome-4.7.0/css/font-awesome.css' %}">
+
+      <!-- Bootstrap-select from: https://silviomoreto.github.io/bootstrap-select -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+
+      <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+      <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+      <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <![endif]-->
+  </head>
+  <body class="container">
+
+      {% if user.is_authenticated %}
+          {% include 'ledu_test/menu/authorized_menu.html' %}
+      {% else %}
+          {% include 'ledu_test/menu/unauthorized_menu.html' %}
+      {% endif %}
+
+      <div id="main-container">
+          {% block content %}{% endblock %}
+      </div>
+
+      <div id="scripts">
+        {% include 'ledu_test/scripts.html' %}
+        {% block scripts %}{% endblock %}
+      </div>
+      <div id="page_script">
+          <!-- this is mainly only for one script that related to the current page only
+          (should be replaced with every page loaded through django-ajax) -->
+      </div>
+  </body>
+</html>

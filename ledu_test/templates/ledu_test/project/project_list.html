@@ -1,0 +1,57 @@
+{% extends "ledu_test/master.html" %}
+{% load staticfiles %}
+
+{% block content %}
+    <div class="container">
+        <h1 class="text-center">Projects</h1>
+        <br/>
+        <table id="projects" class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Details</th>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>
+                        Rate
+                        <a href="?sort=desc">
+                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                        </a>
+                        <a href="?sort=asc">
+                            <span class="glyphicon glyphicon-triangle-top"></span>
+                        </a>
+                    </th>
+                    <th>Your vote</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for project in project_list %}
+                <tr id="{{ project.id }}" data-toggle="popover" data-placement="bottom">
+                    <td data-toggle="tooltip" title="get the details">
+                        <a href="#">
+                            <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                        </a>
+                    </td>
+                    <td>
+                        {{ project.title }}
+                    </td>
+                    <td>
+                        {{ project.user }}
+                    </td>
+                    <td id="project_{{ project.id }}_rate" data-toggle="tooltip" title="project rate">
+                        {{ project.rate }}
+                    </td>
+                    <td>
+                        {% include 'ledu_test/project/vote_form.html' %}
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript"
+        src="{% static 'ledu_test/js/vote.js' %}">
+</script>
+{% endblock %}

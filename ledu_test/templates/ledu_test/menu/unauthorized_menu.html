@@ -1,0 +1,33 @@
+{% load staticfiles %}
+<div class="container-fluid">
+  <div class="col-xs-12">
+    <nav class="navbar navbar-default">
+        <div class="row">
+            <div class="col-md-2" style="text-align: left; margin-top: 10px;">
+                <a href="/" class="btn btn-inverse logo-style">
+                    <img src="{% static 'ledu_test/logo.png' %}">
+                </a>
+            </div>
+            <div class="col-md-8">
+                <div class="btn-group-justified" role="group">
+                    <a href="{% url 'project-list' %}" class="btn btn-success btn-rectangle">
+                        <span class="glyphicon glyphicon-th-large" style="font-size: 25px; color: greenyellow;"
+                              data-toggle="tooltip" data-placement="bottom" title="all bogs"></span>
+                        <br/>projects
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-2" style="text-align: right;">
+                <div class="btn-group">
+                    <a href="{% url 'sign_up' %}" class="btn btn-primary btn-rectangle">
+                        <span class="glyphicon glyphicon-plus-sign" style="font-size: 25px; color: greenyellow;"></span>
+                        <br/>Register
+                    </a>
+                    <a href="{% url 'login' %}" class="btn btn-default btn-rectangle" style="height: 74px;">
+                        <span class="glyphicon glyphicon-log-in" style="font-size: 25px;"></span></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+  </div>
+</div>
